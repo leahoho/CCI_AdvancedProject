@@ -1,5 +1,12 @@
-Options of local servers include:
+## 3D Virtual Gallery
 
-Running npm i -g five-server@latest && five-server --port=8000 in a terminal in the same directory as your HTML file.
-Running python -m SimpleHTTPServer (or python -m http.server for Python 3) in a terminal in the same directory as your HTML file.
-Once we are running our server, we can open our project in the browser using the local URL and port which the server is running on (e.g., http://localhost:8000). Try not to open the project using the file:// protocol which does not provide a domain; absolute and relative URLs may not work.
+![27](https://user-images.githubusercontent.com/39073888/204059489-47be3e18-fda5-49c0-b718-0b7258ffa00a.png)
+![28](https://user-images.githubusercontent.com/39073888/204059472-c539cd21-8865-4492-8be8-63c11b0f8a64.png)
+![29](https://user-images.githubusercontent.com/39073888/204059475-9ccf391a-507d-439f-a0fd-6b6db3337d43.png)
+
+
+
+Open Gallery in local servers:
+
+(1) Running npm i -g five-server@latest && five-server --port=8000 in a terminal in the same directory as your HTML file.
+(2)Running python -m SimpleHTTPServer (or python -m http.server for Python 3) in a terminal in the same directory as your HTML file.
