@@ -6,6 +6,8 @@ The Web UI in the feasibility prototype was meant to allow end-users to upload t
 
 ![26](https://user-images.githubusercontent.com/39073888/204059183-4bf65220-b420-4840-abc0-e9956181dcc9.png)
 
+https://user-images.githubusercontent.com/39073888/204063027-f287635c-067e-4f35-a273-f335e22ed760.mp4
+
 
 
 ## 🖼 Final Outcome ⤵️
