@@ -4,6 +4,9 @@ This project used a stable diffusion model to develop a Web User Interface for i
 
 The Web UI in the feasibility prototype was meant to allow end-users to upload their profile pictures and generate new images with different styles by using a prompt. The generated image was uploaded to a 3D virtual gallery manually. The web User Interface enabled end-users to create images from text). This tool is projected to be affordable and give end users free points. The end-users are also given free classifier guidance to enable them to obtain the most interesting results.
 
+![26](https://user-images.githubusercontent.com/39073888/204059183-4bf65220-b420-4840-abc0-e9956181dcc9.png)
+
+
 
 ## 🖼 Final Outcome ⤵️
 
