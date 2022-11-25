@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stable Diffusion Exhibition</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-animation-component@^5.1.2/dist/aframe-animation-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-orbit-controls@1.2.0/dist/aframe-orbit-controls.min.js"></script>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+  </head>
+
+  <body>
+    <a-scene shadow>
+      <a-assets>
+        <a-asset-item
+          id="room"
+          src="https://cdn.glitch.com/f935fd40-5104-4f18-9699-7f57977ac9b5%2Froom.glb?v=1615084090063"
+        ></a-asset-item>
+
+        <a-asset-item
+          id="houseplant"
+          src="https://cdn.glitch.com/8072f44a-cd5a-4639-a93a-93edc9b6d39a%2FHouseplant.glb?v=1615096342772"
+        ></a-asset-item>
+        <img
+          id="sky"
+          src="assets/sky.jpg"
+        />
+        <img
+          id="carpet"
+          src="https://cdn.glitch.com/8072f44a-cd5a-4639-a93a-93edc9b6d39a%2FPersianCarpet.jpg?v=1621662050892"
+        />
+        <img
+        id="floor"
+        src="https://cdn.glitch.com/f935fd40-5104-4f18-9699-7f57977ac9b5%2Ffloor-1024.jpg?v=1615083965627"
+        />
+        <img
+          id="moon-texture"
+          src="https://cdn.glitch.com/8072f44a-cd5a-4639-a93a-93edc9b6d39a%2Fmoon-map.jpg?v=1621643438396"
+        />
+        <img
+          id="profile-1"
+          src="https://cdn.glitch.global/300325b6-7f26-460e-b80d-837ff2739ac4/download%20(4).png?v=1669152767410"
+        />
+        <img
+          id="profile-2"
+          src="https://cdn.glitch.global/300325b6-7f26-460e-b80d-837ff2739ac4/tmpx3tdfsg3.png?v=1669152764273"
+        />
+        <img
+          id="profile-3"
+          src="https://cdn.glitch.global/300325b6-7f26-460e-b80d-837ff2739ac4/tmp10elxzzl.png?v=1669153649463"
+        />
+        <img
+          id="profile-4"
+          src="https://cdn.glitch.global/300325b6-7f26-460e-b80d-837ff2739ac4/download%20(1).png?v=1669151578551"
+        />
+        <img
+          id="profile-5"
+          src="https://cdn.glitch.global/300325b6-7f26-460e-b80d-837ff2739ac4/tmp0lw92gs2.png?v=1669152000689"
+        />
+        <img
+          id="profile-6"
+          src="https://cdn.glitch.global/300325b6-7f26-460e-b80d-837ff2739ac4/tmp5a5_tmuz.png?v=1669152478792"
+        />
+        <img
+          id="profile-7"
+          src="https://cdn.glitch.global/300325b6-7f26-460e-b80d-837ff2739ac4/tmp2hmb0i2i.png?v=1669149933761"
+        />
+        <img
+          id="profile-8"
+          src="https://cdn.glitch.global/300325b6-7f26-460e-b80d-837ff2739ac4/tmpcpahzklc.png?v=1669149791864"
+        />
+
+        <img
+          id="stable"
+          src="https://cdn.glitch.global/300325b6-7f26-460e-b80d-837ff2739ac4/download.png?v=1669157080660"
+        />
+      </a-assets>
+
+      <!-- Sky -->
+      <a-sky
+        src="#sky"
+        sound="src: #alone; autoplay: true; loop: true; positional: false"
+      ></a-sky>
+
+      <!-- Customer Light | Ambient Light -->
+      <a-entity
+        light="type: ambient;
+                           intensity: 0.2"
+      >
+      </a-entity>
+
+      <!-- Rotate Moon-->
+      <a-mixin
+        id="rotation"
+        animation="property: rotation; loop: true; 
+                          from:  0 0 0; to: 0 360 0; 
+                          dur: 0; easing: linear;"
+      ></a-mixin>
+
+      <!-- Rotate Sphere-->
+      <a-mixin
+      id="orbit"
+      animation="property: rotation; loop: true; 
+                        to: 0 360 0; 
+                        dur: 0; easing: linear;"
+      ></a-mixin>
+
+
+      <!-- Sphere -->
+      <a-entity
+        mixin="orbit"
+        animation="dur: 36500"
+        shadow="receive: true"
+      >
+        <a-entity id="sphere" position="-20 20 20">
+          <a-sphere
+            id="sphere"
+            position="0 0 0"
+            radius="2"
+            color ="#FDCDF8"
+            mixin="rotation"
+            animation="dur: 1000"
+          ></a-sphere>
+          <a-entity id="sm-sphere" mixin="orbit" animation="dur: 28000">
+            <a-sphere
+              id="sm-sphere"
+              position="5 0 0"
+              radius="0.545"
+              color ="#9CCBFA"
+              mixin="rotation"
+              animation="28000"
+            ></a-sphere>
+          </a-entity>
+        </a-entity>
+      </a-entity>
+
+
+      <!-- Moon -->
+      <a-sphere
+        id="moon"
+        position="0 20 0"
+        radius="6"
+        src="#moon-texture"
+        light="type: point; intensity: 0.5; castShadow: true; distance: 40; decay: 1"
+        material="shader: flat"
+        mixin="rotation"
+        animation="dur: 27000"
+      ></a-sphere>
+
+      <!-- Ground -->
+      <a-plane
+        rotation="-90 0 0"
+        width="2000"
+        height="2000"
+        repeat="300 300"
+        shadow="receive: true"
+      >
+      </a-plane>
+
+      <!-- Carpet -->
+      <a-plane
+        src="https://cdn.glitch.com/8072f44a-cd5a-4639-a93a-93edc9b6d39a%2Fshag.jpg?v=1621663599265"
+        opacity="0.3"
+        rotation="-90 90 0"
+        shadow="receive: true"
+        width="26"
+        height="4"
+        repeat="6 2"
+        position="4 0.07 0"
+      >
+      </a-plane>
+      <a-plane
+        color="#FFBBE4"
+        rotation="-90 90 0"
+        shadow="receive: true"
+        width="26"
+        height="4"
+        position="4 0.072 0"
+        material="opacity: 0.7"
+      >
+      </a-plane>
+
+      <!-- Camera -->
+      <a-entity
+        movement-controls="speed: 0.25"
+        position="5 1.6 -16"
+        rotation="0 180 0"
+      >
+        <a-camera look-controls="pointerLockEnabled: true"></a-camera>
+        <a-cursor></a-cursor>
+      </a-entity>
+
+      <!-- Blue Room | x = 4m   y ≈ 5m   z = 14m -->
+      <a-entity gltf-model="#room" shadow="receive: true" position="0 0 0">
+      </a-entity>
+      
+
+      <!-- Second Blue Room | x = 4m   y ≈ 5m   z = 14m -->
+      <a-entity
+        gltf-model="#room"
+        shadow="receive: true"
+        position="8 0 8"
+        rotation="0 180 0"
+      >
+      </a-entity>
+
+      <!-- Plant -->
+      <a-entity
+        gltf-model="#houseplant"
+        id="plant-light"
+        shadow="receive: true"
+        position="10 0 9"
+        scale="0.5 0.5 0.5"
+      >
+      </a-entity>
+
+      <!-- Painting - 1 -->
+      <a-image src="#profile-1" scale="2 3 0" position="-2 2.5 -2.49"> </a-image>
+      <a-text
+        value="Generated by Lea"
+        color="white"
+        align="center"
+        position="-2 0.5 -2.49"
+      ></a-text>
+
+      <!-- Painting - 2 -->
+      <a-plane
+        src="#profile-2"
+        scale="4.5 3 0"
+        position="-3.74 2.5 1"
+        rotation="0 90 0"
+      >
+      </a-plane>
+      <a-text
+        value="Generated by Dan"
+        color="white"
+        align="center"
+        position="-3.74 0.5 1"
+        rotation="0 90 0"
+      ></a-text>
+
+      <!-- Painting - 3 -->
+      <a-plane
+        id="painting3"
+        src="#profile-3"
+        scale="4.5 3 0"
+        position="11.74 2.5 1"
+        rotation="0 270 0"
+      >
+      </a-plane>
+      <a-text
+        value="Generated by Jack H"
+        color="white"
+        align="center"
+        position="11.74 0.5 1"
+        rotation="0 270 0"
+      ></a-text>
+
+      <!-- Painting - 4 -->
+      <a-image src="#profile-4" scale="3 3 0" position="9.8 2.5 -2.48"> </a-image>
+      <a-text
+        value="Generated by Anne"
+        color="white"
+        align="center"
+        position="9.8 0.5 -2.48"
+      ></a-text>
+
+      <!-- Painting - 5 -->
+      <a-plane
+        id="painting5"
+        src="#profile-5"
+        scale="4.5 3 0"
+        position="-3.74 2.5 7"
+        rotation="0 90 0"
+      >
+      </a-plane>
+      <a-text
+        value="Generated by Jay"
+        color="white"
+        align="center"
+        position="-3.74 0.5 7"
+        rotation="0 90 0"
+      ></a-text>
+
+      <!-- Painting - 6 -->
+      <a-plane
+        src="#profile-6"
+        scale="4.5 3 0"
+        position="11.74 2.5 7"
+        rotation="0 270 0"
+      >
+      </a-plane>
+      <a-text
+        value="Generated by Jack C"
+        color="white"
+        align="center"
+        position="11.74 0.5 7"
+        rotation="0 270 0"
+      ></a-text>
+
+      <!-- Painting - 7 -->
+      <a-plane
+        src="#profile-7"
+        scale="3 2 0"
+        position="-1.75 2.5 10.49"
+        rotation="0 180 0"
+      >
+      </a-plane>
+      <a-text
+        value="Generated by Jayden D"
+        color="white"
+        align="center"
+        position="-1.75 0.5 10.49"
+        rotation="0 180 0"
+      ></a-text>
+
+      <!-- Painting - 8 -->
+      <a-plane
+        id="hitler-light"
+        src="#profile-8"
+        scale="2.5 3 0"
+        position="9.75 2.5 10.49"
+        rotation="0 180 0"
+      >
+      </a-plane>
+      <a-text
+        value="Generated by Ethan T"
+        color="white"
+        align="center"
+        position="9.75 0.5 10.49"
+        rotation="0 180 0"
+      ></a-text>
+
+      <!-- Light Panel -->
+      <a-box
+        color="#EBC8F7"
+        scale="6 0.1 1"
+        position="0 4 0"
+        shadow="cast: true"
+      >
+      </a-box>
+
+
+      <!-- Yellow Box -->
+      <a-box
+        color="#FFEB3B"
+        scale="0.5 0.5 0.5"
+        position="-1 1 0"
+        shadow="cast: true"
+        shader="flat"
+        animation="property: rotation;
+                        to: 0 360 0;
+                        loop: true;
+                        dur: 5000;
+                        easing: linear"
+      >
+      </a-box>
+
+      <!-- Pink Box -->
+      <a-box
+        id="pink-box"
+        color="#FA62CB"
+        scale="0.5 0.5 0.5"
+        position="1 1 0"
+        shadow="cast: true"
+        animation__1="property: rotation;
+                           to: 0 360 0;
+                           loop: true;
+                           dur: 5000;
+                           easing: linear"
+        animation__2="property: position;
+                           to: 1 1 -2;
+                           loop: true;
+                           dir: alternate;
+                           dur: 5000;
+                           easing: easeInOutCubic"
+      >
+      </a-box>
+
+      <!-- Customer Light | Point Light -->
+      <a-entity
+        light="type: point;
+                           intensity: 0.8;
+                           distance: 10;
+                           castShadow: true"
+        position="0 2 1.5"
+        animation="property: light.intensity;
+                                     from: 0.8;
+                                     to: 0;
+                                     loop: true;
+                                     dir: alternate;
+                                     dur: 5000;
+                                     easing: easeInOutCubic"
+      >
+      </a-entity>
+
+      <!-- Customer Light | Spot Light -->
+      <a-entity
+        light="type: spot;
+                           target: #pink-box;
+                           color: #C40070;
+                           angle: 30;
+                           penumbra: 0.1;
+                           castShadow: true"
+        position="0 3 1"
+      >
+      </a-entity>
+
+      <!-- Customer Light | Spot Light over painting 6 -->
+      <a-entity
+        light="type: spot;
+                           target: #painting5;
+                           intensity: 0.5;
+                           angle: 25;
+                           penumbra: 0.1;
+                           castShadow: true"
+        position="0 4.5 1"
+      >
+      </a-entity>
+
+      <!-- Customer Light | Spot Light over Plant -->
+      <a-entity
+        light="type: spot;
+                           target: #plant-light;
+                           intensity: 0.5;
+                           angle: -15;
+                           penumbra: 0.3;
+                           castShadow: true"
+        position="-1 3 3"
+      >
+      </a-entity>
+
+      <!-- Customer Light | Spot Light over painting 3 -->
+      <a-entity
+        light="type: spot;
+                           target: #painting3;
+                           intensity: 0.5;
+                           angle: -10;
+                           penumbra: 0.3;
+                           castShadow: true"
+        position="0 3 3"
+      >
+      </a-entity>
+
+
+         <!-- Light over sphere -->
+         <a-entity
+         light="type: spot;
+                            target: #spere;
+                            angle: -10;
+                            penumbra: 0.3;
+                            castShadow: true"
+         position="0 3 3"
+       >
+       </a-entity>
+
+
+   <!-- Light over Screen -->
+      <a-entity
+        light="type: point;
+                           target: #bigscreen;
+                           intensity: 0.38;
+                           angle: -10;
+                           penumbra: 0.3;
+                           castShadow: true"
+        position="0 3 3"
+      >
+      </a-entity>
+
+      <!-- Big screen cinema  -->
+      <a-box position="5 5 30.1" scale="20 10 20" color="white"> </a-box>
+      <a-box position="5 11 30.1" scale="20 2 20" color="#FFBBE4"></a-box>
+
+      <a-plane
+        id="bigscreen"
+        src="#stable"
+        width="19.82"
+        height="10"
+        position="5 5 20"
+        rotation="0 180 0"
+      >
+      </a-plane>
+      <a-text
+        value="Stable Diffusion Exhibition"
+        color="white"
+        align="center"
+        scale="5 5 5"
+        position="5 11 20"
+        rotation="0 180 0"
+      ></a-text>
+    </a-scene>
+  </body>
+</html>
