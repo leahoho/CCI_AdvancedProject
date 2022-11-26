@@ -49,4 +49,4 @@ https://github.com/leahoho/CCI_AdvancedProject/tree/main/StableDiffusionUI_React
 
 ▶️ Presentation Video:
 
-https://github.com/leahoho/CCI_CodingTwo/tree/main/FinalProject
+https://youtu.be/7gFG0Ne2GoU
