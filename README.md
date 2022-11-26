@@ -34,7 +34,7 @@ https://github.com/leahoho/CCI_AdvancedProject/tree/main/3DVirtualGallery_Aframe
 
 ▶️ Documentation:
 
-https://github.com/leahoho/CCI_CodingTwo/tree/main/FinalProject
+https://github.com/leahoho/CCI_AdvancedProject/blob/main/documentaion.md
 
 
 ▶️ Stable Diffusion APP UI:
