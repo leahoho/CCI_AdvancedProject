@@ -23,11 +23,11 @@ https://user-images.githubusercontent.com/39073888/204063027-f287635c-067e-4f35-
 
 ▶️ Stable Diffusion Web UI build with Gradio:
 
-https://github.com/leahoho/CCI_CodingTwo/tree/main/FinalProject
+https://github.com/leahoho/CCI_AdvancedProject/tree/main/StableDiffusionUI_Gradio
 
 ▶️ 3D Virtual Gallery build with Aframe:
 
-https://github.com/leahoho/CCI_CodingTwo/tree/main/FinalProject
+https://github.com/leahoho/CCI_AdvancedProject/tree/main/3DVirtualGallery_Aframe
 
 
 ## 🌐 Development Process ⤵️
@@ -39,12 +39,12 @@ https://github.com/leahoho/CCI_CodingTwo/tree/main/FinalProject
 
 ▶️ Stable Diffusion APP UI:
 
-https://github.com/leahoho/CCI_CodingTwo/tree/main/FinalProject
+https://github.com/leahoho/CCI_AdvancedProject/tree/main/StableDiffusionAppUI
 
 
 ▶️ Stable Diffusion Web UI build with FastAPI & React JS:
 
-https://github.com/leahoho/CCI_CodingTwo/tree/main/FinalProject
+https://github.com/leahoho/CCI_AdvancedProject/tree/main/StableDiffusionUI_React_FastAPI
 
 
 ▶️ Presentation Video:
